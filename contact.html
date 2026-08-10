@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - Dance World</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Dance Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="contact-section">
+
+        <h1>📩 Contact Us</h1>
+
+        <p>
+            Dance World සමඟ සම්බන්ධ වීමට පහත පෝරමය භාවිතා කරන්න.
+        </p>
+
+        <div class="contact-box">
+
+            <form onsubmit="sendMessage(event)">
+
+                <label for="name">ඔබගේ නම</label>
+                <input type="text" id="name" placeholder="නම ඇතුළත් කරන්න">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email එක ඇතුළත් කරන්න">
+
+                <label for="message">පණිවිඩය</label>
+                <textarea id="message" rows="6" placeholder="ඔබගේ පණිවිඩය මෙහි ලියන්න"></textarea>
+
+                <button type="submit">Send Message 📩</button>
+
+            </form>
+            <div class="contact-info">
+
+    <div class="info-card">
+        <h3>📧 Email</h3>
+        <p>danceworld@gmail.com</p>
+    </div>
+
+    <div class="info-card">
+        <h3>📞 Phone</h3>
+        <p>+94 77 123 4567</p>
+    </div>
+
+    <div class="info-card">
+        <h3>📍 Location</h3>
+        <p>Sri Lanka</p>
+    </div>
+
+</div>
+
+        </div>
+
+    </section>
+
+    <script>
+function sendMessage(event) {
+    event.preventDefault();
+
+    alert("Thank you! Your message has been received. 💃");
+
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
