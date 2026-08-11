@@ -1,80 +1,161 @@
-<!DOCTYPE html>
-<html lang="si">
-<head>
+<!DOCTYPE html><html lang="si"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact | Dance World</title>
 
-    <title>Contact - Dance World</title>
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
-</head>
+</head><body><!-- Navigation -->
 
-<body>
+<nav>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Dance Types</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <a href="index.html">Home</a>
 
-    <section class="contact-section">
+    <a href="index.html#about">About</a>
 
-        <h1>📩 Contact Us</h1>
+    <a href="index.html#dance">Dance Types</a>
 
-        <p>
-            Dance World සමඟ සම්බන්ධ වීමට පහත පෝරමය භාවිතා කරන්න.
-        </p>
+    <a href="index.html#gallery">Gallery</a>
 
-        <div class="contact-box">
+    <a href="contact.html">Contact</a>
 
-            <form onsubmit="sendMessage(event)">
+</nav>
 
-                <label for="name">ඔබගේ නම</label>
-                <input type="text" id="name" placeholder="නම ඇතුළත් කරන්න">
 
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email එක ඇතුළත් කරන්න">
+<!-- Contact Section -->
 
-                <label for="message">පණිවිඩය</label>
-                <textarea id="message" rows="6" placeholder="ඔබගේ පණිවිඩය මෙහි ලියන්න"></textarea>
+<section class="contact-section">
 
-                <button type="submit">Send Message 📩</button>
+    <h1>📩 Contact Us</h1>
 
-            </form>
-            <div class="contact-info">
+    <p>
+        Dance World සමඟ සම්බන්ධ වීමට
+        පහත පෝරමය භාවිතා කරන්න.
+    </p>
 
-    <div class="info-card">
-        <h3>📧 Email</h3>
-        <p>danceworld@gmail.com</p>
+
+    <!-- Contact Form -->
+
+    <div class="contact-box">
+
+        <form onsubmit="sendMessage(event)">
+
+            <label for="name">
+                ඔබගේ නම
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="නම ඇතුළත් කරන්න"
+                required
+            >
+
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email එක ඇතුළත් කරන්න"
+                required
+            >
+
+
+            <label for="message">
+                පණිවිඩය
+            </label>
+
+            <textarea
+                id="message"
+                rows="6"
+                placeholder="ඔබගේ පණිවිඩය මෙහි ලියන්න"
+                required
+            ></textarea>
+
+
+            <button type="submit">
+                Send Message 📩
+            </button>
+
+        </form>
+
     </div>
 
-    <div class="info-card">
-        <h3>📞 Phone</h3>
-        <p>+94 77 123 4567</p>
-    </div>
 
-    <div class="info-card">
-        <h3>📍 Location</h3>
-        <p>Sri Lanka</p>
-    </div>
+    <!-- Contact Information -->
 
-</div>
+    <div class="contact-info">
+
+        <div class="info-card">
+
+            <h3>📧 Email</h3>
+
+            <p>
+                danceworld@gmail.com
+            </p>
 
         </div>
 
-    </section>
 
-    <script>
-function sendMessage(event) {
-    event.preventDefault();
+        <div class="info-card">
 
-    alert("Thank you! Your message has been received. 💃");
+            <h3>📞 Phone</h3>
 
-    event.target.reset();
-}
+            <p>
+                +94 77 123 4567
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>📍 Location</h3>
+
+            <p>
+                Sri Lanka
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Dance World | All Rights Reserved
+    </p>
+
+    <p>
+        💃 Discover the Beauty of Dance 🌍
+    </p>
+
+</footer>
+
+
+<!-- Message Script -->
+
+<script>
+
+    function sendMessage(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you! Your message has been received. 💃"
+        );
+
+        event.target.reset();
+
+    }
+
 </script>
 
-</body>
-</html>
+</body></html>
