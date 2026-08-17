@@ -15,6 +15,11 @@
 
 <section class="content">
 
+    <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 සෙවීමට වචනයක් ඇතුළත් කරන්න">
+    <button onclick="searchText()">Search</button>
+</div>
+
     <img src="images/foreign.jpg" alt="විදේශීය නර්තන">
 
 
@@ -103,5 +108,34 @@
     <p>💃 Discover the Beauty of Dance 🌍</p>
 
 </footer>
+
+<script>
+function searchText() {
+    let input = document.getElementById("searchInput").value.trim();
+
+    if (input === "") {
+        alert("සෙවීමට වචනයක් ඇතුළත් කරන්න.");
+        return;
+    }
+
+    let content = document.querySelector(".content");
+
+    let oldMarks = content.querySelectorAll("mark");
+
+    oldMarks.forEach(function(mark) {
+        mark.replaceWith(document.createTextNode(mark.textContent));
+    });
+
+    let regex = new RegExp(
+        "(" + input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")",
+        "gi"
+    );
+
+    content.innerHTML = content.innerHTML.replace(
+        regex,
+        "<mark>$1</mark>"
+    );
+}
+</script>
 
 </body></html>

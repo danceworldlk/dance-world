@@ -17,6 +17,11 @@
 <!-- Main Content -->
 <section class="content">
 
+    <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 සෙවීමට වචනයක් ඇතුළත් කරන්න">
+    <button onclick="searchText()">Search</button>
+</div>
+
     <img src="images/history.jpg" alt="නර්තන කලාවේ ඉතිහාසය">
 
 
@@ -360,20 +365,18 @@
 
 <h2><u>කුරුණෑගල යුගය</u></h2>
 
-<b><p>.</p></b>
+<b><p>01. " ගැටබෙර,පනාබෙර,එකැස්බෙර,මිහිඟු බෙර,මද්දල,භෘංග වීණා,නකුල වීණා,දද්දර වීණා,ගැටබෙර,සමුද්‍රගෝෂ,රණ රංග ඝෝෂා,ඩැක්කි,ඩවුර,සක්පඤ්ච මේ ආදී භේරි නාදයෙන්... " ( සිංහල ථූපවංශය ).</p></b>
 <br>
 <u><p style="text-align: left;">*මේ කරුණ ඔස්සේ පහත කරුණු ඔප්පු කළ හැකිය</u><br>
--.<br>
--.<br>
--.</p>
+-එකල නර්තන කලාව තුල පැවති වාද්‍ය භාණ්ඩ භාවිතය.<br>
+-මද්දලය හා වීණාව වැනි වාද්‍ය භාණ්ඩ භාරතීය නර්තන සම්ප්‍රදායන් සඳහා භාවිත වන ඒවා බැවින් කුරුණෑගල යුගයේ නර්තන කලාවට භාරතීය ආභාශය ලැබී ඇති බව.</p>
 <br>
 
-<b><p>.</p></b>
+<b><p>02. " සක්පංච,චංඩනී ( වඩ්ඩාරු ) , දළහං,මද්දල මහමඩු කුඩම් ( මහමකුඩම් ) , පනාබෙර,මිහිඟු බෙර,ඩැක්කි,උඩැක්කි,තාලම්පට,විරන්දම්.... ගවර,වංගී,වස්,කුළල්,වස්දඬු.. ආදී වූ.. " ( දළඳා සිරිත ).</p></b>
 <br>
 <u><p style="text-align: left;">*මේ කරුණ ඔස්සේ පහත කරුණු ඔප්පු කළ හැකිය</u><br>
--.<br>
--.<br>
--.</p>
+-එකල නර්තන කලාව තුල පැවති වාද්‍ය භාණ්ඩ භාවිතය.<br>
+-මද්දලය වැනි වාද්‍ය භාණ්ඩ භාරතීය නර්තන සම්ප්‍රදායන් සඳහා භාවිත වන බැවින් කුරුණෑගල යුගයේ නර්තන කලාවට භාරතීය ආභාශය ලැබී ඇති බව.</p>
 <br>
 
 <b><p>.</p></b>
@@ -561,6 +564,35 @@
     </p>
 
 </footer>
+
+<script>
+function searchText() {
+    let input = document.getElementById("searchInput").value.trim();
+
+    if (input === "") {
+        alert("සෙවීමට වචනයක් ඇතුළත් කරන්න.");
+        return;
+    }
+
+    let content = document.querySelector(".content");
+
+    let oldMarks = content.querySelectorAll("mark");
+
+    oldMarks.forEach(function(mark) {
+        mark.replaceWith(document.createTextNode(mark.textContent));
+    });
+
+    let regex = new RegExp(
+        "(" + input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")",
+        "gi"
+    );
+
+    content.innerHTML = content.innerHTML.replace(
+        regex,
+        "<mark>$1</mark>"
+    );
+}
+</script>
 
 </body>
 </html>

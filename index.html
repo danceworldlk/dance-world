@@ -64,7 +64,11 @@
 <section class="categories">
 
     <u><h2 id="dance">Categories</h2></u>
-
+    <div class="search-box">
+    <input type="text" id="searchInput" placeholder="නර්තනය ගැන සොයන්න...">
+    <button onclick="searchContent()">🔍 Search</button>
+</div>
+<div id="searchResults"></div>
     <div class="cards">
 
         <a href="history.html">
@@ -306,5 +310,110 @@ function previousImage(event) {
     </p>
 
 </footer>
+
+<script>
+
+const searchPages = [
+    {
+        title: "නර්තන කලාවේ ඉතිහාසය",
+        description: "ප්‍රාග් බෞද්ධ යුගයේ සිට මහනුවර යුගය තෙක් නර්තන කලාවේ ඉතිහාසය.",
+        link: "history.html"
+    },
+    {
+        title: "නූතන ප්‍රවණතා",
+        description: "කොළඹ යුගයේ සිට අද්‍යතනය දක්වා නර්තන කලාවේ සිදුවූ විකාශය.",
+        link: "modern.html"
+    },
+    {
+        title: "ආලෝකකරණය හා වේදිකාව",
+        description: "රංග භූමියේ සිට නවීන ප්‍රාසාංගික වේදිකාව දක්වා ආලෝකකරණය හා විකාශනය.",
+        link: "stage.html"
+    },
+    {
+        title: "දේශීය වන්නම්",
+        description: "උඩරට, පහතරට, සබරගමු වන්නම් හා අද්‍යතන වන්නම් පිළිබඳ තොරතුරු.",
+        link: "wannam.html"
+    },
+    {
+        title: "දේශීය ශාන්තිකර්ම",
+        description: "කොහොඹා කංකාරිය, දෙවොල් මඩුව, පහන් මඩුව, සන්නියකුම හා බලි ශාන්තිකර්මය.",
+        link: "shanthikarma.html"
+    },
+    {
+        title: "ගැමි නැටුම්",
+        description: "කළගෙඩි, ලී කෙළි, කුළු, මෝල්ගස් ආදී සිංහල හා ද්‍රවිඩ ගැමි නැටුම්.",
+        link: "folk.html"
+    },
+    {
+        title: "විදේශීය නර්තන",
+        description: "භරත, කථක්, කථකලි, මණිපුරි වැනි භාරතීය නර්තන සම්ප්‍රදායන්.",
+        link: "foreign.html"
+    },
+    {
+        title: "කලාකෘති හා මුද්‍රා නාට්‍ය",
+        description: "ශ්‍රී ලංකාවේ සහ බටහිර බැලේ නර්තන කලා කෘතීන් පිළිබඳ තොරතුරු.",
+        link: "art_ballet.html"
+    }
+];
+
+
+function searchContent() {
+
+    const searchText = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const results = document.getElementById("searchResults");
+
+    results.innerHTML = "";
+
+    if (searchText === "") {
+        return;
+    }
+
+    const matches = searchPages.filter(function(page) {
+
+        return page.title.toLowerCase().includes(searchText) ||
+               page.description.toLowerCase().includes(searchText);
+
+    });
+
+
+    if (matches.length === 0) {
+
+        results.innerHTML = `
+            <div class="search-result">
+                <h3>😔 තොරතුරු හමු නොවීය</h3>
+                <p>"${searchText}" සඳහා සෙවුම් ප්‍රතිඵල හමු නොවීය.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    matches.forEach(function(page) {
+
+        results.innerHTML += `
+            <div class="search-result">
+
+                <h3>${page.title}</h3>
+
+                <p>${page.description}</p>
+
+                <a href="${page.link}">
+                    විස්තර බලන්න →
+                </a>
+
+            </div>
+        `;
+
+    });
+
+}
+
+</script>
 
 </body></html>
