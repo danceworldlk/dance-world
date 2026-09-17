@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>නර්තන කලාවේ ඉතිහාසය | Dance World</title>
 
-<link rel="stylesheet" href="modern.css">
+<link rel="stylesheet" href="BIgnote.css">
 
 </head><body><!-- Header -->
 <header class="page-header">
@@ -11,4 +11,57 @@
 
 
 </header>
+<script>
+
+/* =========================================
+   MOUSE SNOW TRAIL
+========================================= */
+
+document.addEventListener("mousemove", function(event) {
+
+    const snow = document.createElement("span");
+
+    snow.className = "snow-particle";
+
+    snow.style.left = event.clientX + "px";
+
+    snow.style.top = event.clientY + "px";
+
+    const randomX =
+        (Math.random() - 0.5) * 80;
+
+    const randomY =
+        Math.random() * 80 + 20;
+
+    snow.style.setProperty(
+        "--snow-x",
+        randomX + "px"
+    );
+
+    snow.style.setProperty(
+        "--snow-y",
+        randomY + "px"
+    );
+
+    const size =
+        Math.random() * 5 + 2;
+
+    snow.style.width =
+        size + "px";
+
+    snow.style.height =
+        size + "px";
+
+    document.body.appendChild(snow);
+
+    setTimeout(function() {
+
+        snow.remove();
+
+    }, 1500);
+
+});
+
+</script>
+
 </body></html>

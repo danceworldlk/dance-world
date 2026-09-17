@@ -140,5 +140,57 @@ function searchText() {
 }
 </script>
 <script src="https://pl30980526.profitableratecpmnetwork.com/31/5d/1f/315d1f02427509cb6d38339f39fe78e9.js"></script>
+<script>
+
+/* =========================================
+   MOUSE SNOW TRAIL
+========================================= */
+
+document.addEventListener("mousemove", function(event) {
+
+    const snow = document.createElement("span");
+
+    snow.className = "snow-particle";
+
+    snow.style.left = event.clientX + "px";
+
+    snow.style.top = event.clientY + "px";
+
+    const randomX =
+        (Math.random() - 0.5) * 80;
+
+    const randomY =
+        Math.random() * 80 + 20;
+
+    snow.style.setProperty(
+        "--snow-x",
+        randomX + "px"
+    );
+
+    snow.style.setProperty(
+        "--snow-y",
+        randomY + "px"
+    );
+
+    const size =
+        Math.random() * 5 + 2;
+
+    snow.style.width =
+        size + "px";
+
+    snow.style.height =
+        size + "px";
+
+    document.body.appendChild(snow);
+
+    setTimeout(function() {
+
+        snow.remove();
+
+    }, 1500);
+
+});
+
+</script>
 
 </body></html>

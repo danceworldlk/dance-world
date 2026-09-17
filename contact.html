@@ -38,21 +38,103 @@
             gap: 20px;
         }
 
-        .info-card {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid #444;
-            border-color: #068306;
-            border-radius: 18px;
-            padding: 25px 15px;
-            transition: 0.3s;
-        }
+        /* ============================= */
+/* CONTACT CARD RUNNING LIGHT */
+/* ============================= */
 
-        .info-card:hover {
-            transform: translateY(-8px);
-            border-color: #ffd700;
-            box-shadow: 0 10px 25px rgba(17, 0, 255, 0.2);
-        }
+.info-card {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 
+    background: rgba(10, 20, 30, 0.92);
+
+    border: 2px solid transparent;
+    border-radius: 18px;
+
+    padding: 25px 15px;
+
+    transition: transform 0.3s ease;
+
+    isolation: isolate;
+}
+
+/* Running Light Border */
+
+.info-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -50%;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 260deg,
+        #00ff88 290deg,
+        #00d9ff 320deg,
+        #8a2be2 350deg,
+        transparent 360deg
+    );
+
+    animation: runningLight 4s linear infinite;
+
+    z-index: -2;
+}
+
+/* Inner Background */
+
+.info-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    background: #101820;
+
+    border-radius: 16px;
+
+    z-index: -1;
+}
+
+/* Animation */
+
+@keyframes runningLight {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+/* Hover Effect */
+
+.info-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 136, 0.4),
+        0 0 30px rgba(0, 217, 255, 0.2);
+
+}
+
+/* Keep Text Above */
+
+.info-card h3,
+.info-card p,
+.info-card a {
+
+    position: relative;
+    z-index: 2;
+
+}
         .info-card h3 {
             color: #ffd700;
             font-size: 23px;
@@ -251,5 +333,57 @@
 
 
 </body>
+<script>
+
+/* =========================================
+   MOUSE SNOW TRAIL
+========================================= */
+
+document.addEventListener("mousemove", function(event) {
+
+    const snow = document.createElement("span");
+
+    snow.className = "snow-particle";
+
+    snow.style.left = event.clientX + "px";
+
+    snow.style.top = event.clientY + "px";
+
+    const randomX =
+        (Math.random() - 0.5) * 80;
+
+    const randomY =
+        Math.random() * 80 + 20;
+
+    snow.style.setProperty(
+        "--snow-x",
+        randomX + "px"
+    );
+
+    snow.style.setProperty(
+        "--snow-y",
+        randomY + "px"
+    );
+
+    const size =
+        Math.random() * 5 + 2;
+
+    snow.style.width =
+        size + "px";
+
+    snow.style.height =
+        size + "px";
+
+    document.body.appendChild(snow);
+
+    setTimeout(function() {
+
+        snow.remove();
+
+    }, 1500);
+
+});
+
+</script>
 
 </html>

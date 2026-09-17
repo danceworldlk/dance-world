@@ -1574,3 +1574,135 @@ footer p:last-child {
     }
 
 }
+.logo {
+
+    text-align: center;
+
+    padding: 55px 20px 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 14, 22, 0.95),
+            rgba(0, 0, 0, 0.98)
+        );
+
+    border-bottom: 1px solid rgba(244, 217, 139, 0.35);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.5);
+
+    animation: headerFade 1s ease;
+}
+/* Header Rotating Light */
+.logo {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* කැරකෙන Light Border */
+.logo::before {
+    content: "";
+
+    position: absolute;
+    inset: -50%;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 250deg,
+        #f4d98b 290deg,
+        #ffffff 320deg,
+        transparent 360deg
+    );
+
+    animation: headerRotateLight 4s linear infinite;
+
+    z-index: -2;
+}
+
+/* ඇතුළත background එක */
+.logo::after {
+    content: "";
+
+    position: absolute;
+    inset: 2px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #000000,
+            #000e16,
+            #000000
+        );
+
+    z-index: -1;
+}
+
+/* නොනවතින කැරකීම */
+@keyframes headerRotateLight {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* =========================================
+   MOUSE SNOW TRAIL EFFECT
+========================================= */
+
+.snow-particle {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 6px #ffffff,
+        0 0 12px #b9efff;
+
+    animation: snowFall 1.5s ease-out forwards;
+
+}
+
+
+@keyframes snowFall {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--snow-x),
+                var(--snow-y)
+            )
+            scale(0.2);
+
+    }
+
+}

@@ -1050,3 +1050,58 @@ footer p:first-child {
         left: 100%;
     }
 }
+/* =========================================
+   MOUSE SNOW TRAIL EFFECT
+========================================= */
+
+.snow-particle {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 6px #ffffff,
+        0 0 12px #b9efff;
+
+    animation: snowFall 1.5s ease-out forwards;
+
+}
+
+
+@keyframes snowFall {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                var(--snow-x),
+                var(--snow-y)
+            )
+            scale(0.2);
+
+    }
+
+}
