@@ -886,8 +886,8 @@ footer p:first-child {
     position: relative;
     display: inline-block;
 
-    padding: 15px 28px;
-    margin: 0 412px;
+    padding: 13px 28px;
+    margin: 20px 0;
 
     color: #ffffff;
     background: linear-gradient(135deg, #061b30, #092b46);
@@ -989,7 +989,6 @@ footer p:first-child {
     position: relative;
     padding: 12px 40px;
     margin-top: 15px;
-    margin: 0 412px;
 
     color: #f4d98b;
     background: rgba(0, 0, 0, 0.35);
