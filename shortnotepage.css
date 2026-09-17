@@ -1,0 +1,896 @@
+/* =========================================
+   DANCE WORLD - SHORT NOTES PAGE
+   Modern Black + Deep Blue Design
+========================================= */
+
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap');
+
+
+/* =========================================
+   BODY
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', 'Noto Sans Sinhala', sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #000000,
+            #003452,
+            #000000
+        );
+
+    background-attachment: fixed;
+
+    color: white;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+
+    text-align: center;
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    padding: 30px 15px 25px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px rgba(0, 183, 255, 0.5),
+        0 0 25px rgba(0, 183, 255, 0.25);
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 16px 15px;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    border-top: 1px solid rgba(0, 183, 255, 0.2);
+
+    border-bottom: 1px solid rgba(0, 183, 255, 0.2);
+
+    backdrop-filter: blur(12px);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #d9f5ff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 10px 17px;
+
+    border-radius: 25px;
+
+    transition: all 0.3s ease;
+
+}
+
+
+nav a:hover {
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #0077b6,
+        #00b4d8
+    );
+
+    box-shadow:
+        0 0 15px rgba(0, 183, 255, 0.35);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================
+   SHORT NOTES SECTION
+========================================= */
+
+.Shortnotes {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 65px 25px 50px;
+
+    text-align: center;
+
+}
+
+
+/* SECTION TITLE */
+
+.Shortnotes h2#dance {
+
+    font-size: 40px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 35px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 12px rgba(0, 183, 255, 0.4);
+
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+.search-box {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    max-width: 650px;
+
+    margin: 0 auto 45px;
+
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 16px 20px;
+
+    border-radius: 35px;
+
+    border: 1px solid rgba(0, 183, 255, 0.45);
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: white;
+
+    font-family: 'Noto Sans Sinhala', sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.search-box input::placeholder {
+
+    color: #9dbbc8;
+
+}
+
+
+.search-box input:focus {
+
+    border-color: #00b4d8;
+
+    box-shadow:
+        0 0 15px rgba(0, 183, 255, 0.35);
+
+}
+
+
+.search-box button {
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 15px 24px;
+
+    border-radius: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #0077b6,
+        #00b4d8
+    );
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 5px 20px rgba(0, 183, 255, 0.2);
+
+}
+
+
+.search-box button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(0, 183, 255, 0.5);
+
+}
+
+
+/* =========================================
+   SEARCH RESULTS
+========================================= */
+
+#searchResults {
+
+    color: #bfefff;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================
+   CARDS GRID
+========================================= */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 25px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   CARD LINKS
+========================================= */
+
+.cards > a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+    display: block;
+
+}
+
+
+/* =========================================
+   CARD DESIGN
+========================================= */
+
+.card {
+
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 35px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 63, 92, 0.75),
+            rgba(0, 0, 0, 0.85)
+        );
+
+    border: 1px solid rgba(0, 183, 255, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+}
+
+
+/* Card Glow Line */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #0077b6,
+        #00b4d8,
+        #90e0ef
+    );
+
+    opacity: 0.8;
+
+}
+
+
+/* Decorative Glow */
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: rgba(0, 183, 255, 0.08);
+
+    top: -70px;
+
+    right: -70px;
+
+    transition: all 0.4s ease;
+
+}
+
+
+/* CARD HOVER */
+
+.cards > a:hover .card {
+
+    transform: translateY(-10px);
+
+    border-color: #00b4d8;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(0, 183, 255, 0.22);
+
+}
+
+
+.cards > a:hover .card::after {
+
+    transform: scale(2);
+
+    background: rgba(0, 183, 255, 0.12);
+
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.card h3 {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-family: 'Noto Sans Sinhala', sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.7;
+
+    color: #ffffff;
+
+    margin-bottom: 15px;
+
+}
+
+
+.card h2 {
+
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #8eeaff;
+
+    letter-spacing: 1px;
+
+}
+
+
+.card h2 u {
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #00b4d8;
+
+    padding-bottom: 4px;
+
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-btn {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 30px auto 65px;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    background: linear-gradient(
+        135deg,
+        #0077b6,
+        #00b4d8
+    );
+
+    box-shadow:
+        0 5px 20px rgba(0, 183, 255, 0.2);
+
+    transition: all 0.3s ease;
+
+}
+
+
+.back-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 25px rgba(0, 183, 255, 0.45);
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    border-top: 1px solid rgba(0, 183, 255, 0.2);
+
+    color: #a9cbd8;
+
+    font-size: 14px;
+
+    line-height: 2;
+
+}
+
+
+footer p:first-child {
+
+    color: #d8f5ff;
+
+    font-weight: 600;
+
+}
+
+
+footer p:last-child {
+
+    color: #8eeaff;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .logo {
+
+        font-size: 28px;
+
+        padding: 25px 10px;
+
+    }
+
+
+    nav {
+
+        gap: 6px;
+
+        padding: 12px 8px;
+
+    }
+
+
+    nav a {
+
+        font-size: 12px;
+
+        padding: 8px 11px;
+
+    }
+
+
+    .Shortnotes {
+
+        padding: 45px 18px 35px;
+
+    }
+
+
+    .Shortnotes h2#dance {
+
+        font-size: 30px;
+
+        margin-bottom: 28px;
+
+    }
+
+
+    .search-box {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .search-box input {
+
+        width: 100%;
+
+        padding: 14px 18px;
+
+    }
+
+
+    .search-box button {
+
+        width: 100%;
+
+        padding: 14px;
+
+    }
+
+
+    .cards {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .card {
+
+        min-height: 165px;
+
+        padding: 28px 18px;
+
+    }
+
+
+    .card h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    .back-btn {
+
+        margin-bottom: 45px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+
+        font-size: 24px;
+
+    }
+
+
+    nav a {
+
+        font-size: 11px;
+
+        padding: 7px 9px;
+
+    }
+
+
+    .Shortnotes h2#dance {
+
+        font-size: 27px;
+
+    }
+
+}
+.card {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 18px;
+
+    background:
+        linear-gradient(145deg, #071b30, #020b16) padding-box,
+        conic-gradient(
+            from var(--border-angle),
+            transparent 0deg,
+            transparent 45deg,
+            #00bfff 80deg,
+            #ffffff 100deg,
+            #00e5ff 120deg,
+            transparent 160deg,
+            transparent 360deg
+        ) border-box;
+
+    animation: cardBorderLight 4s linear infinite;
+
+    box-shadow:
+        0 0 10px rgba(0, 191, 255, 0.15),
+        inset 0 0 20px rgba(0, 191, 255, 0.04);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Border එක වටේට ලයිට් එක ගමන් කිරීම */
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes cardBorderLight {
+    from {
+        --border-angle: 0deg;
+    }
+
+    to {
+        --border-angle: 360deg;
+    }
+}
+
+/* Mouse එක card එක උඩට ගෙනාවම */
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 15px rgba(0, 191, 255, 0.45),
+        0 0 35px rgba(0, 191, 255, 0.2),
+        inset 0 0 25px rgba(0, 191, 255, 0.08);
+}
+/* ============================= */
+/* ANIMATED BACK BUTTON */
+/* ============================= */
+
+.back-button {
+    position: relative;
+    display: inline-block;
+
+    padding: 14px 28px;
+    margin: 10px 900px;
+
+    color: #ffffff;
+    background: linear-gradient(135deg, #061b30, #092b46);
+
+    border: 2px solid #00bfff;
+    border-radius: 30px;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    box-shadow:
+        0 0 8px rgba(0, 191, 255, 0.5),
+        0 0 20px rgba(0, 191, 255, 0.2);
+
+    animation: backButtonGlow 2s ease-in-out infinite;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Button එක ඇතුළේ යන ලයිට් එක */
+.back-button::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        110deg,
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+
+    animation: backButtonLight 2.5s linear infinite;
+
+    z-index: -1;
+}
+
+/* Border එක නවතින්නේ නැතුව glow වීම */
+@keyframes backButtonGlow {
+    0%,
+    100% {
+        box-shadow:
+            0 0 8px rgba(0, 191, 255, 0.5),
+            0 0 20px rgba(0, 191, 255, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 14px rgba(0, 229, 255, 0.9),
+            0 0 35px rgba(0, 191, 255, 0.5);
+    }
+}
+
+/* Button එක හරහා ලයිට් එක ගමන් කිරීම */
+@keyframes backButtonLight {
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
+
+/* Hover effect */
+.back-button:hover {
+    color: #001522;
+    background: #00e5ff;
+
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+        0 0 15px #00e5ff,
+        0 0 35px rgba(0, 229, 255, 0.8);
+}
+
+/* Click කරන වෙලාවේ */
+.back-button:active {
+    transform: scale(0.96);
+}
